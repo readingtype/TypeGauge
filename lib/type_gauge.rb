@@ -108,20 +108,29 @@ class TypeGauge
   end
 
   class UnparseableInputException < ArgumentError
+
+    attr_reader :message
+
     def initialize
-      "Input was not recognised as a type size"
+      @message = "input was not recognised as a type size"
     end
   end
 
   class AmbiguousInputException < ArgumentError
+
+    attr_reader :message
+
     def initialize(*args)
-      "Input could refer to more than one size: #{args}"
+      @message = "input could refer to more than one point size: #{args.each {|i| i.to_s}}"
     end
   end
 
   class UnqualifiedInputException < ArgumentError
+
+    attr_reader :message
+
     def initialize
-      "Input did not include recognised measurement unit"
+      @message = "input did not include recognised measurement unit"
     end
   end
 
