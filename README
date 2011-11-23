@@ -1,0 +1,43 @@
+TYPEGAUGE
+=========
+
+Docs for Version 0.1
+
+TypeGauge is a gem providing a very basic class that tries to guess whether a given input string represents a legitimate description of a dimension of a typeface. It knows about quite a few of the traditional names for type sizes (currently based entirely on http://en.wikipedia.org/wiki/Point_(typography)#Traditional_point-size_names).
+
+It can be used on the type size and the line height; you might find it useful for some other measurement related to page layout.
+
+If it's not happy it has three moderately descriptive errors which can be incorporated into code. My initial use case was as part of the validation process for a model and I wanted users to have some idea of what was wrong with their input.
+
+If it's happy nothing much happens -- there isn't (yet) a public method for asking for a cleaned-up version of the string.
+
+You can get a TypeGauge object to tell you the units in which the input value was supplied and you can convert its size to mm or to points (2 decimal places), which could be useful for sorting a number of measurements.
+
+tg = TypeGauge.new('12 didot')
+tg.unit => :didot
+tg.to_mm => 4.5108
+tg.to_point => 12.83
+
+
+Let me know if you find it useful.
+
+
+Tests
+-----
+
+None as yet.
+
+
+require 'future'
+---------------
+
+I would like to handle the case where there a single 'traditional' name maps to more than one 'modern' type size better. I can imagine a way, but for now I've simply left symbols that somebody might use (:uk, :us) in the TRADITIONAL_NAMES array.
+
+
+Old iron[y]
+-----------
+
+I see nothing incongruous in writing software that is entirely dedicated to the measuring systems of a redundant technology such as letterpress. It makes me feel better :)
+
+
+Ben Weiner

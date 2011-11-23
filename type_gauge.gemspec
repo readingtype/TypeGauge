@@ -13,5 +13,6 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
 
   s.author = "Ben Weiner"
-  s.license = false
+  s.email = "ben@readingtype.org.uk"
+  s.license = "BSD"
 end
