@@ -22,16 +22,12 @@ tg.to_point => 12.83
 Let me know if you find it useful.
 
 
-Tests
------
-
-None as yet.
-
-
 require 'future'
 ---------------
 
-I would like to handle the case where there a single 'traditional' name maps to more than one 'modern' type size better. I can imagine a way, but for now I've simply left symbols that somebody might use (:uk, :us) in the TRADITIONAL_NAMES array.
+I would like to handle the case where there a single 'traditional' name maps to more than one 'modern' type size better. I can imagine a way, but for now I've simply left symbols that somebody might use (:uk, :us) in the TRADITIONAL_NAMES array. There is only one case at the moment but I am sure more will emerge from the typeracks...
+
+It would be nice to convert 'modern' type sizes to traditional names. There are more ambiguities going that way.
 
 
 Old iron[y]
